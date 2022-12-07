@@ -1,4 +1,4 @@
-# -advent-of-code-kotlin-Frosendroska
+# advent-of-code-kotlin-Frosendroska
 
 Welcome to the Advent of Code[^aoc] Kotlin project created by [frosendroska][github] using the [Advent of Code Kotlin Template][template] delivered by JetBrains.
 
