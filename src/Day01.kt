@@ -1,15 +1,37 @@
 fun main() {
     fun part1(input: List<String>): Int {
-        return input.size
+        var max = 0
+        var cur = 0
+        for (i in input.indices) {
+            if (input[i].isNotEmpty()) {
+                cur += Integer.parseInt(input[i])
+                max = Math.max(max, cur)
+            } else {
+                cur = 0
+            }
+        }
+        return max
     }
 
     fun part2(input: List<String>): Int {
-        return input.size
+        val arr = mutableListOf<Int>()
+        arr.add(0)
+        var cur = 0
+        var max = 0
+        for (i in input.indices) {
+            if (input[i].isNotEmpty()) {
+                cur += input[i].toInt()
+            } else {
+                arr.add(cur)
+                cur = 0
+            }
+        }
+        arr.sortDescending()
+        for (i in 0 .. 2) {
+            max += arr[i]
+        }
+        return max
     }
-
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 1)
 
     val input = readInput("Day01")
     println(part1(input))
